@@ -10,7 +10,7 @@ CREATE TABLE users (
   password varchar(255) NOT NULL,
   role varchar(255) NOT NULL DEFAULT 'user',
   imagepath varchar(255) NOT NULL,
-  PRIMARY KEY (Id)
+  PRIMARY KEY (id)
 )
 
 CREATE TABLE books (
