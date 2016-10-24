@@ -22,7 +22,7 @@ CREATE TABLE books (
   quantity int NOT NULL,
   categoryId int NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (userId) REFERENCES users(id),
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
 )
 
 CREATE TABLE borrowed (
@@ -33,8 +33,8 @@ CREATE TABLE borrowed (
   time_borrowed date DEFAULT NOW(),
   time_returned date NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (userId) REFERENCES users(id),
-  FOREIGN KEY (bookId) REFERENCES books(id)
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (bookId) REFERENCES books(id) ON DELETE CASCADE
 )
 
 CREATE TABLE category (
