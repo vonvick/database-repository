@@ -20,7 +20,9 @@ CREATE TABLE books (
   description text NOT NULL,
   isbn bigint NOT NULL,
   quantity int NOT NULL,
-  PRIMARY KEY (id)
+  categoryId int NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (userId) REFERENCES users(id),
 )
 
 CREATE TABLE borrowed (
@@ -33,4 +35,11 @@ CREATE TABLE borrowed (
   PRIMARY KEY (id),
   FOREIGN KEY (userId) REFERENCES users(id),
   FOREIGN KEY (bookId) REFERENCES books(id)
+)
+
+CREATE TABLE category (
+  id int AUTO_INCREMENT,
+  title varchar(255) NOT NULL,
+  description text NOT NULL,
+  PRIMARY KEY (id),
 )
