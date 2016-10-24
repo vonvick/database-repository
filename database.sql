@@ -23,3 +23,14 @@ CREATE TABLE books (
   PRIMARY KEY (id)
 )
 
+CREATE TABLE borrowed (
+  id int AUTO_INCREMENT,
+  userId int NOT NULL,
+  bookId int NOT NULL,
+  status varchar(255) NOT NULL DEFAULT 'borrowed',
+  time_borrowed date DEFAULT NOW(),
+  time_returned date NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (userId) REFERENCES users(id),
+  FOREIGN KEY (bookId) REFERENCES books(id)
+)
