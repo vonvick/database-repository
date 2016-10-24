@@ -12,3 +12,14 @@ CREATE TABLE users (
   imagepath varchar(255) NOT NULL,
   PRIMARY KEY (Id)
 )
+
+CREATE TABLE books (
+  id int AUTO_INCREMENT,
+  title varchar(255) NOT NULL,
+  author varchar(255) NOT NULL,
+  description text NOT NULL,
+  isbn bigint NOT NULL,
+  quantity int NOT NULL,
+  PRIMARY KEY (id)
+)
+
